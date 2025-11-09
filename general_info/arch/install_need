@@ -1,0 +1,23 @@
+netctl dhcpcd base-devel binutils xfce-goodies
+xorg-xbacklight
+network-manager-applet
+networkmanager
+udiskie(end start it on system boot)
+blueman
+picom
+feh
+i3lock
+
+# graphic install
+xorg-server
+lightdm
+lightdm-gtk-greeter
+
+# sound
+pulseaudio
+pavucontrol
+
+numlockx
+xss-lock
+
+gvfs //trash can for pcmanfm

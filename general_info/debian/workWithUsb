@@ -1,0 +1,7 @@
+sudo mount /dev/sdb1 /media/folderName   //if dont work, use mkfs command
+
+
+sudo wipefs -f --all /dev/sdb        //sdb - usb drive name
+sudo cfdisk /dev/sdb                 //sdb - usb drive name
+sudo mkfs.vfat -n 'LOL' /dev/sdb1    //sdb1 - partition name  (if error, umount first)
+sudo mkfs -t vfat -I /dev/sdX

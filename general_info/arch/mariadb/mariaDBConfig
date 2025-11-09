@@ -1,0 +1,6 @@
+LimitNOFILE=infinity
+
+mysql_insall_db (with options)
+chown -R mysql:mysql /path/mysql
+
+if won't help then 'chmod 0755 /new-path/mysql'

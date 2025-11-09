@@ -1,0 +1,8 @@
+install  samba, sabma client
+smb.conf - /etc/samba
+
+get access to the user holder - 
+smbclient //125.12.2.2/folderName -U userName   or
+smbclient //pcName/folderName -U userName
+
+smbtree

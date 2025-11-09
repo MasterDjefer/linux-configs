@@ -1,0 +1,5 @@
+Because I was using static, I copied the example profile with cd /etc/netctl then cp examples/ethernet-static my-network. After that, I edited my-network with nano my-network, and changed the Interface from eth0 to en1s8 (or whatever your adapter is in ip link). Finally, I enabled it to use that profile on startup with netctl enable my-network.
+
+Enabling the profile will ensure that it starts upon boot, but there is no need to reboot the system, simply run netctl start my-network to initialize it immediately.
+
+I was able to get help on the official Arch Linux forums, you can view my topic there.

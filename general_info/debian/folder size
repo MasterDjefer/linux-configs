@@ -1,0 +1,1 @@
+sudo du --max-depth=0 -h /var/lib/docker

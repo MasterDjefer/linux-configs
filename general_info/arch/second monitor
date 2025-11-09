@@ -1,0 +1,5 @@
+xrandr --output NEW_MONITOR_NAME --auto --left-of CURRENT_MONITOR
+xrandr --query
+xrandr --addmode NEW_MONITOR_NAME 1440x900
+xrandr --output NEW_MONITOR_NAME --mode 1440x900
+xrandr --output display_name --off

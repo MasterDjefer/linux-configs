@@ -1,0 +1,4 @@
+xbacklight -inc 10
+-dec 20
+add user to video group!!!
+usermod -aG video <user>

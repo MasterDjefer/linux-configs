@@ -1,0 +1,8 @@
+CREATE USER 'predator'@localhost IDENTIFIED BY 'qwerty';
+SELECT User FROM mysql.user;
+GRANT ALL PRIVILEGES ON *.* TO 'user1'@localhost IDENTIFIED BY 'password1';
+SHOW GRANTS FOR 'user1'@localhost;
+
+CREATE DATABASE wordscollections;
+show databases;
+show tables;

@@ -1,0 +1,26 @@
+SHELL variable
+set:
+VAR_NAME=VALUE    //can be: 100, "fsd", /dev/sda1
+
+get:
+echo $VAR_NAME
+
+unset:
+unset VARIABLE_NAME
+
+
+
+ENVIRONMENT variable
+set:
+export VAR_NAME=VALUE
+
+get:
+echo $VAR_NAME
+printenv VAR_NAME
+
+unset:
+unset VARIABLE_NAME
+
+
+ADD FOREVER:
+add "export VAR_NAME=VALUE" line to: ~/.bash_profile

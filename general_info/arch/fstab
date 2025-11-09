@@ -1,0 +1,15 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sda1
+UUID=10b6380c-a683-4a8e-b156-e5b8039c5f30	/         	ext4      	rw,relatime		0 1
+
+# /dev/sda2
+UUID=19287865-2444-4778-81d4-40de9f4f9ef8	none      	swap      	defaults  		0 0
+
+# /dev/sda
+UUID=645E5FA65E5F7032 				/media/diskD 	ntfs 		rw,user,exec,umask=000  0 0
+
+# /dev/sda5
+UUID=C280696180695D43 				/media/diskE 	ntfs 		rw,user,exec,umask=000  0 0

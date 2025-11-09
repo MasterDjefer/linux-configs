@@ -1,0 +1,5 @@
+# error: nvidia-utils: /usr/lib/xorg/modules/drivers/nvidia_drv.so exists in filesystem
+
+pacman -Qo <conflicted_file>
+sudo pacman -S --overwrite '*' <package_name>
+

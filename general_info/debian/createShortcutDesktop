@@ -1,0 +1,10 @@
+create file in Desktop *.desktop    =>
+
+[Desktop Entry]
+Name=Chrome
+Comment=Open google chrome browser
+Exec=google-chrome
+Icon=google-chrome-icon
+Terminal=false
+Type=Application
+Categories=Program;

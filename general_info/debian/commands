@@ -1,0 +1,5 @@
+sudo ln -sf /home/predator/bin/decBrightness.sh /usr/bin/decBrightness    //create symlink
+lspci   //hard devices
+lsusb   //usb devices(bus)
+xrandr --verbose   //show displays
+sudo usermod -d /home/directory user    //assign home directory to  new user

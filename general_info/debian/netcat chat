@@ -1,0 +1,5 @@
+server:
+sudo netcat -l -p <port>
+
+client
+sudo netcat <ip_server> <port>

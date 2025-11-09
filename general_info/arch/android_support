@@ -1,0 +1,3 @@
+need to install: pacman: mtpfs, yay: jmtpfs
+sudo pacman -Sy gvfs-mtp
+sudo pacman -Sy gvfs-gphoto2

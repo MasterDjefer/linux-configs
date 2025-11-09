@@ -1,0 +1,2 @@
+sudo ip link set eth0 up
+systemctl dhcpcd or dhclient

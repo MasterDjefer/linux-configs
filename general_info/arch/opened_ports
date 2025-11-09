@@ -1,0 +1,3 @@
+netstat     -t: tcp, -u: udp
+cat /etc/services
+ss -ntl | grep 8080

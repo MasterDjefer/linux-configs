@@ -1,0 +1,2 @@
+sudo dpkg-reconfigure gdm3
+sudo systemctl enable gdm3

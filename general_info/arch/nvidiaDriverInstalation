@@ -1,0 +1,18 @@
+check which driver I use:
+lsmod | egrep "nvidia|nouveau"
+
+disabling neuveuo:
+
+insert this into /etc/modprobe.d/blacklist-nouveau.conf:
+blacklist nouveau
+options nouveau modeset=0
+
+generate new configs:
+sudo mkinitcpio -p linux
+then reboot
+
+download proper nvidia driver from website, install
+
+urls:
+https://www.nvidia.com/en-in/drivers/details/236036/
+https://www.nvidia.com/en-in/drivers/

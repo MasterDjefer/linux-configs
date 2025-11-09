@@ -1,0 +1,4 @@
+sudo service --status-all
+systemctl  start/stop/restart service_name
+service   service_name start/stop/restart
+service   service_name status

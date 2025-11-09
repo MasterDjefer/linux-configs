@@ -1,0 +1,4 @@
+/etc/lightdm/lightdm.conf
+uncomment 
+autologinuser = xxx
+auto login timeout = 0

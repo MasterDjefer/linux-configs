@@ -1,0 +1,2 @@
+/etc/systemd/logind.conf  //change field and UNCOMMENT!
+HandleLidSwitch = ignore

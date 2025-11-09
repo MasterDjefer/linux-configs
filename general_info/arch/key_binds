@@ -1,0 +1,7 @@
+# Change language
+bindsym $mod+Tab exec change_layout
+bindsym XF86MonBrightnessUp   exec "xbacklight -inc 1"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 1"
+bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
+bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
+bindsym XF86AudioMute exec  "amixer set Master toggle"

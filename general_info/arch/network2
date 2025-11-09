@@ -1,0 +1,5 @@
+pacman -S netctl dhcpcd
+systemctl enable dhcpcd
+systemctl start dhcpcd
+cp /etc/netctl/examples /etc/netctl/mydhcpconfig
+netctl start mydhcpconfig
