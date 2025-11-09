@@ -1,0 +1,51 @@
+format = """
+[](#433573)\
+$os\
+$hostname\
+[](fg:#433573 bg:#3d1c40)\
+$username\
+[](fg:#3d1c40 bg:#540f30)\
+$directory\
+[](fg:#540f30 bg:#000000)\
+"""
+
+
+
+
+#format = '''
+#[┌───────────────────>](bold green)
+#[│](bold green)$directory$rust$package
+#[└─>](bold green) '''
+
+
+
+
+[os]
+style = "bg:#433573"
+disabled = false # Disabled by default
+[os.symbols]
+Arch = "󰣇 "
+
+[hostname]
+ssh_only = false
+style = "bg:#433573"
+format = '[$hostname]($style)'
+disabled = false
+
+[username]
+show_always = true
+style_user = "bg:#3d1c40"
+format = '[$user]($style)'
+disabled = false
+
+#[character]
+#symbol = "➜"
+#success_symbol = "[➜](bold green)"
+#error_symbol = "[✗](bold red)"
+
+[directory]
+format = "[$path]($style)"
+style = "bg:#540f30"
+truncation_length = 20
+truncation_symbol = "…/"
+
