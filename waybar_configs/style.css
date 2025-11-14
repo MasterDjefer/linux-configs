@@ -1,19 +1,23 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    /*font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;*/
+	font-family: 'CaskaydiaMono Nerd Font';
     font-size: 13px;
+	margin: 0 0px;
+	padding: 0;
+	min-width: 0;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background-color: rgba(43, 48, 59, 0.0);
+    /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
     color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+    /*transition-property: background-color;*/
+    /*transition-duration: .5s;*/
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+    /*opacity: 0.2;*/
 }
 
 /*
@@ -26,17 +30,17 @@ window#waybar.solo {
 */
 
 window#waybar.termite {
-    background-color: #3F3F3F;
+/*    background-color: #3F3F3F;*/
 }
 
 window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+    /*background-color: #000000;
+    border: none;*/
 }
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
+    /*box-shadow: inset 0 -3px transparent;*/
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
@@ -44,41 +48,49 @@ button {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    /*background: inherit;
+    box-shadow: inset 0 -3px #ffffff;*/
 }
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background-color: #a37800;
+    /*background-color: #a37800;*/
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #ffffff;
+	color: #B1B6C9;
+    padding: 0 8px;
+	margin: 0 1px;
+	border-radius: 6px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #62678C;
+	transition: all 200ms ease-in-out;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+	/*background-color: red;*/
+	background-color: green;
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    /*background-color: #64727D;*/
+    /*box-shadow: inset 0 -3px #ffffff;*/
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    /*background-color: #eb4d4b;*/
 }
 
 #workspaces button.active {
-    background-color: #53416b;
+    /*background-color: #53416b;*/
+    background-color: #62678C;
+	min-width: 40px;
 }
 
 #mode {
     background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    /*box-shadow: inset 0 -3px #ffffff;*/
 }
 
 #clock,
@@ -117,18 +129,14 @@ button:hover {
     margin-right: 0;
 }
 
-#clock {
-    background-color: #64727D;
-}
-
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    /*background-color: #ffffff;*/
+
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: #e8d368;
+    /*background-color: #26A65B;*/
 }
 
 @keyframes blink {
@@ -169,16 +177,17 @@ button:hover {
 }
 
 label:focus {
-    background-color: #000000;
+    /*background-color: #000000;*/
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    /*background-color: #2ecc71;*/
+    color: #c9c0bf;
 }
 
 #memory {
-    background-color: #9b59b6;
+    /*background-color: #9b59b6;*/
+    color: #c9c0bf;
 }
 
 #disk {
@@ -186,20 +195,62 @@ label:focus {
 }
 
 #backlight {
-    background-color: #90b1b1;
+    /*background-color: #90b1b1;*/
+    color: #c9c0bf;
 }
 
+
+#custom-pac_aval,
+#taskbar,
+#bluetooth,
+#network,
+#battery,
+#clock,
+#customizable,
+#keyboard_input {
+    background-color: #64727D;
+    color: #c9c0bf;
+	border-radius: 6px;
+	margin: 0 1px;
+}
+
+#bluetooth {
+	padding: 0 6px;
+}
+
+#custom-pac_aval {
+	padding: 0 4px;
+}
+
+#taskbar button {
+	margin: 0 4px;
+}
+
+#taskbar.empty {
+	margin: 0;
+	padding: 0;
+}
+
+/*#customizable {
+    background-color: #64727D;
+    color: #c9c0bf;
+	border-radius: 6px;
+	margin: 0;
+}*/
+
 #network {
-    background-color: #2980b9;
+    /*background-color: #c9c0bf;*/
+    color: #c9c0bf;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    /*background-color: #f53c3c;*/
+    color: #ff5a47;
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    /*background-color: #f1c40f;*/
+    color: #c9c0bf;
 }
 
 #pulseaudio.muted {
@@ -222,6 +273,9 @@ label:focus {
     min-width: 100px;
 }
 
+#taskbar {
+}
+
 #custom-media.custom-spotify {
     background-color: #66cc99;
 }
@@ -231,7 +285,8 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
+    /*background-color: #f0932b;*/
+    color: #c9c0bf;
 }
 
 #temperature.critical {
@@ -278,19 +333,24 @@ label:focus {
 }
 
 #language {
-    background: #00b093;
-    color: #740864;
+    /*background: #00b093;*/
+    color: #c9c0bf;
     padding: 0 5px;
     margin: 0 0px;
     min-width: 16px;
 }
 
 #keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
+    background: #64727D;
+    color: #c9c0bf;
+}
+
+#keyboard-state {
+	margin: 3px;
+}
+
+#keyboard-state label{
+	border-radius: 5px;
 }
 
 #keyboard-state > label {
@@ -300,6 +360,8 @@ label:focus {
 #keyboard-state > label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
+
+
 
 #scratchpad {
     background: rgba(0, 0, 0, 0.2);

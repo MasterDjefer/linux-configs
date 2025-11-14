@@ -13,23 +13,29 @@
         // "hyprland/scratchpad",
         // "custom/media"
     ],
-    // "modules-center": [
-    // ],
+    "modules-center": [
+		"clock"
+    ],
     "modules-right": [
+		"custom/pac_aval",
+        "group/customizable",
         // "mpd",
         // "idle_inhibitor",
-        "pulseaudio",
+        // "pulseaudio",
         "network",
+		"bluetooth",
         // "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
-        "backlight",
-        "hyprland/language",
-        "keyboard-state",
+        // "cpu",
+        // "memory",
+        // "temperature",
+        // "backlight",
+        //"hyprland/language",
+        //"keyboard-state",
+		"group/keyboard_input",
         "battery",
         "battery#bat2",
-        "clock"
+		"wlr/taskbar"
+        //"clock"
         // "tray",
         // "custom/power"
     ],
@@ -53,7 +59,7 @@
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
-        // "format": "{name} {icon}",
+        //"format": "{name} {icon}",
 		"format": {
         	"numlock": "N {icon}",
         	"capslock": "C {icon}"
@@ -77,7 +83,8 @@
 	    "format": "{}",
     	"format-en": "EN",
     	"format-uk": "UA",
-    	"format-uk-latin": "UA(Lat)"
+    	"format-uk-latin": "UA(Lat)",
+		"on-click": "hyprctl switchxkblayout \"at-translated-set-2-keyboard\" next"
   	},
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -121,13 +128,24 @@
         // }
     },
     "clock": {
-        // "timezone": "America/New_York",
+        //"timezone": "America/New_York",
 		"interval": 1,
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%H:%M %d-%m-%Y}",
-        "format-alt": "{:%H:%M:%S %d-%m-%Y}"
+        //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"tooltip": false,
+        "format": "  {:%H:%M %A %d/%m/%Y}",
+        "format-alt": "  {:%H:%M:%S %A %d/%m/%Y}"
         // "format-alt": "{:%Y-%m-%d}"
     },
+	"bluetooth": {
+		// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+		"format": " {status}",
+		"format-disabled": "󰂲", // an empty format will hide the module
+		"format-connected": " {num_connections} connected",
+		"tooltip-format": "{controller_alias}\t{controller_address}",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"on-click": "blueman-manager"
+	},
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
@@ -145,8 +163,8 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": [""] 
+        "format": "{icon} {percent}%",
+        "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖"] 
         // "format-icons": ["", "", "", "", "", "", "", "", ""]  "" 
     },
     "battery": {
@@ -155,11 +173,11 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -180,21 +198,22 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-wifi": "  {essid} ({signalStrength}%)",
+        "format-ethernet": "  {ipaddr}/{cidr}",
+        //"tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
+		"tooltip": false,
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
         //"on-click": "nm-connection-editor"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{icon} {volume}% {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format-muted": "󰝟 {format_source}",
+        "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -230,5 +249,49 @@
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
-    }
+    },
+	"wlr/taskbar": {
+    	"format": "{icon}",
+    	"icon-size": 17,
+    	"icon-theme": "Numix-Circle",
+    	"tooltip-format": "{title}",
+		"tooltip": false,
+    	"on-click": "activate",
+    	"on-click-right": "close",
+    	"ignore-list": [
+        	"Alacritty",
+			"kitty",
+			"pcmanfm",
+			"blueman-manager",
+			"leafpad",
+			"firefox"
+    	],
+    	"app_ids-mapping": {
+        	"firefoxdeveloperedition": "firefox-developer-edition"
+	    },
+    	"rewrite": {
+	        "Firefox Web Browser": "Firefox",
+        	"Foot Server": "Terminal"
+    	}
+	},
+	"group/customizable": {
+		"orientation": "horizontal",
+		"modules": [
+			"pulseaudio",
+			"backlight"
+		]
+	},
+	"group/keyboard_input": {
+		"orientation": "horizontal",
+		"modules": [
+			"hyprland/language",
+			"keyboard-state"
+		]
+	},
+	"custom/pac_aval": {
+    	"exec": "/home/predator/toolsForSettings/arch/availablePackagesToUpdate.sh",
+   	 	"format": "󰏔 {text}",
+		"return-type": "json",
+		"interval": 1200
+	}
 }
